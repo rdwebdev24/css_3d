@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>ghost</title>
+     <style>
+          *{
+               margin:0px;
+               padding: 0px;
+               box-sizing: border-box;
+          }
+          body{
+               width: 100vw;
+               height: 100vh;
+               transform-style: preserve-3d;
+               perspective: 700px;
+               overflow: hidden;
+          }
+          .wall{
+               width: 100%;
+               height: 100vh;
+               background-color: orange;
+               animation:  colorchange 3s 17s linear forwards;
+          }
+
+          @keyframes colorchange {
+               0%{background-color: orange;}
+               100%{background-color: purple;}
+          }
+          #image{
+               filter: drop-shadow(-3px 10px 4px #000);
+               transform: rotateZ(0deg);
+               position: absolute;
+               top: 50%;
+               z-index: 1;
+               left: 48%;
+               width: 65px;
+               animation: float 20s linear forwards ,float2 2s infinite linear;
+          }
+          @keyframes float {
+               0%{ top: 50%; left: -10%;}
+               7%{ top: 50%; left: 20%; }
+               15%{top: 50%; left: 20%; }
+               21%{ top:15%; left:20%;  }
+               28%{ top:15%; left: 20%; }
+               35%{ top:15%; left: 40%; }
+               42%{ top:15%; left: 40%; }
+               49%{ top:15%; left: 60%; }
+               56%{ top:15%; left: 60%; }
+               63%{ top:15%; left: 80%; }
+               70%{ top:15%; left: 80%; }
+               77%{ top:15%; left: 20%; }
+               84%{ top:50%; left: 20%; }
+               91%{ top:50%; left: 20%; }
+               100%{left: 48%; top: 50%;}
+          }
+          @keyframes float2 {
+               0%{transform: translateY(0px);}
+               50%{transform: translateY(15px);}
+               100%{transform: translateY(0px);}
+          }
+          ul{
+               transform: translateY(30px);
+               margin-left: auto;
+               margin-right: auto;
+               width: 80%;
+               height: 18vh;
+               /* border: 2px solid red; */
+               display: flex;
+               justify-content: space-around;
+          }
+          #fire_1{
+               animation: glow 1s 3.5s linear forwards;
+          }
+          #fire_2{
+               animation: glow 1s 6s linear forwards;
+          }
+          #fire_3{
+               animation: glow 1s 8.8s linear forwards;
+          }
+          #fire_4{
+               animation: glow 1s 11.8s linear forwards;
+          }
+          @keyframes glow {
+               0%{width: 0px;}
+               99%{width: 0px;}
+               100%{width: 30px;}
+          }
+          li{
+               list-style: none;
+          }
+          li .fire{
+               position: absolute;
+               width: 0px;
+          }
+          li .stand{
+               top: 25px;
+               margin-left: 6px;
+               position: absolute;
+               z-index: 1;
+               width: 40px;
+          }
+
+          .door{
+               perspective: 800px;
+               border-radius: 50% 50% 0 0 ;
+               transform: translate(550px , 115px);
+               width: 130px;
+               height: 180px;
+               background-color: black;
+               border: 2px solid red;
+               position: absolute;
+               z-index: 0;
+               animation: glow2 5s 18s linear;
+          }
+          @keyframes glow2 {
+               0%{box-shadow: 2px 2px 5px 5px yellow;}
+               50%{box-shadow: 2px 2px 20px 25px yellow;}
+               100%{box-shadow: 2px 2px 5px 5px yellow;}
+          }
+          #door2{
+               display: grid;
+               place-items: center;
+               z-index: 2;
+               perspective: 800px;
+               border-radius: 50% 50% 0 0 ;
+               transform-origin: right;
+               transform:  translate(550px , 115px);
+               width: 130px;
+               height: 180px;
+               background-color: red;
+               border: 2px solid grey;
+               position: absolute;
+               animation:opendoor 5s 18s linear ;    
+          }
+          @keyframes opendoor {
+               0%{transform:  translate(550px , 115px) rotateY(0deg);}
+               25%{transform:  translate(550px , 115px) rotateY(60deg);}
+               50%{transform:  translate(550px , 115px) rotateY(60deg);}
+               75%{transform:  translate(550px , 115px) rotateY(0deg);}
+               100%{transform:  translate(550px , 115px) rotateY(0deg);}
+          }
+
+          p{
+               text-shadow: 2px 4px 5px black;
+               color:white;
+               font-size: 20px;
+               text-align: center;
+          }
+
+     </style>
+</head>
+<body>
+     <div class="wall">
+          <img src="./images/Screenshot (33)-cutout.png" alt="" id="image">
+          <ul>
+               <li><img src="./images/images.png" alt="" class="fire" id="fire_1"><img src="./images/download-2.png" alt="" class="stand"></li>
+               <li><img src="./images/images.png" alt="" class="fire" id="fire_2"><img src="./images/download-2.png" alt="" class="stand"></li>
+               <li><img src="./images/images.png" alt="" class="fire" id="fire_3"><img src="./images/download-2.png" alt="" class="stand"></li>
+               <li><img src="./images/images.png" alt="" class="fire" id="fire_4"><img src="./images/download-2.png" alt="" class="stand"></li>
+          </ul>
+          <div class="door"></div>
+          <div class="door" id="door2">
+               <p>light all flames to open door</p>
+          </div>
+     </div>
+     
+     
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>atom</title>
+     <style>
+          * {
+               margin: 0px;
+               padding: 0px;
+               box-sizing: border-box;
+          }
+
+          body {
+               width: 100vw;
+               height: 100vh;
+               display: grid;
+               place-items: center;
+               perspective: 800px;
+               transform-style: preserve-3d;
+          }
+
+          .main {
+               width: 2%;
+               height: 5%;
+               /* border: 2px solid red; */
+               position: relative;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               transform: rotateX(45deg);
+               animation: turn 20s infinite linear forwards;
+          }
+
+          @keyframes turn {
+     0%{transform: rotateX(45deg);}
+     15%{transform: rotateX(0deg);}
+     30%{transform: rotateX(0deg);}
+     45%{transform: rotateX(45deg);}
+     60%{transform: rotateY(180deg);}
+     75%{transform: rotatey(180deg)}
+     90%{transform: rotatey(0deg)}
+     100%{transform: rotatex(45deg)}
+}
+          .box {
+               /* transform-style: preserve-3d; */
+               /* perspective: 700px; */
+               position: absolute;
+               border-radius: 50%;
+               border: 3px solid black;
+
+
+          }
+
+          .div1 {
+               border: 0px solid grey;
+               width: 20px;
+               height: 20px;
+               border-radius: 100%;
+               background-color: grey;
+               /* border: 2px solid red; */
+
+          }
+         .div2 {
+               width: 200px;
+               height: 200px;
+               /* transform: rotateX(80deg) rotateY(-20deg); */
+               display: flex;     
+              animation: circular_1 1s infinite linear forwards;
+          }
+ 
+    li{
+     width: 20px;
+     height: 20px;
+     border-radius: 50%;
+     position: absolute;
+     background-color: red;
+     list-style: none;
+}
+
+@keyframes circular_1 {
+     0%{transform: rotate(0deg);}
+     100%{transform: rotate(360deg);}
+}
+.list_1 :nth-child(1){
+     top: -11px;
+     left: 50%;
+     position: absolute;
+
+}
+.list_1 :nth-child(2){
+     bottom: -11px;
+     left: 50%;
+     position: absolute;
+
+}
+          .div3 {
+               width: 380px;
+               height: 380px;
+               /* transform: rotateX(-60deg) rotateY(10deg); */
+              animation: circular_1 3s infinite linear;
+               
+          }
+.list_2 :nth-child(1){
+     top: -11px;
+     left: 50%
+}
+.list_2 :nth-child(2){
+     bottom: -11px;
+     left: 50%
+}
+.list_2 :nth-child(3){
+     top: 173px;
+     right:-11px
+}
+.list_2 :nth-child(4){
+     top: 173px;
+     left: -11px
+}
+.list_2 :nth-child(5){
+     top: 300px;
+     right:33px
+}
+.list_2 :nth-child(6){
+     top: 300px;
+     left: 33px;
+}
+.list_2 :nth-child(7){
+     bottom: 300px;
+     left: 33px
+}
+.list_2 :nth-child(8){
+     bottom: 300px;
+     right: 33px
+}
+          .div4 {
+               width:550px;
+               height: 550px;
+               /* transform: rotateX(80deg) rotateY(20deg); */
+              animation: circular_1 5s  infinite linear;
+          }
+
+.list_3 :nth-child(1){
+     left: 260px;
+     top: -11px;
+}
+
+     </style>
+</head>
+
+<body>
+     <div class="main">
+          <div class="div1 box"></div>
+          <div class="div2 box">
+               <ul class="list_1">
+                    <li></li>
+                    <li></li>
+               </ul>
+          </div>
+          <div class="div3 box">
+               <ul class="list_2">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+               </ul>
+          </div>
+          <div class="div4 box">
+               <ul class="list_3">
+                    <li></li>
+               </ul>
+          </div>
+     </div>
+</body>
+
+</html>

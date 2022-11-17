@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>rolling coin</title>
+     <style>
+          *{
+               margin: 0px ;
+               padding: 0px;
+               box-sizing: border-box;
+          }
+body{
+     width: 100vw;
+     height: 100vh;
+     display: grid;
+     place-items: center;
+}
+
+.main{
+     background-color: grey;
+     width: 100%;
+     height: 100%;
+     /* border: 2px solid red; */
+     display: grid;
+     place-items: center;
+     position: relative;
+     perspective: 800px;
+     overflow: hidden;
+}
+.coin{
+     perspective: 800px;
+     transform-style: preserve-3d;
+     width: 100px;
+     height: 100px;
+     display: grid;
+     place-items: center;
+     position: absolute;
+     border-radius: 100%;
+     /* border: 2px solid green; */
+     animation:come 3s linear , fall 1s 3s linear forwards;
+}
+
+@keyframes fall {
+     0%{transform: rotate3d(1,1,1,0deg) ; left:50%;}
+     10%{transform: rotate3d(1,1,1,45deg) ; left:50%;}
+     20%{transform: rotate3d(3,1,1,70deg) ; left:50%;}
+     30%{transform: rotate3d(6,1,1,80deg) ; left:50%;}
+     40%{transform: rotate3d(8,1,-4,86deg) ; left:50%;}
+     50%{transform: rotate3d(4,5,-4,100deg) ; left:50%;}
+     60%{transform: rotate3d(6,3,-7,100deg) ; left:50%;}
+     70%{transform: rotate3d(3,6,-4,100deg) ; left:50%;}
+     80%{transform: rotate3d(7,4,-5,100deg) ; left:50%;}
+     90%{transform: rotate3d(7,4,-6,100deg) ; left:50%;}
+     100%{transform: rotate3d(7,4,-6,100deg) ; left:50%;}
+
+}
+@keyframes come {
+     0%{left: -25%; transform: rotate(0);}
+     100%{left: 50%; transform: rotate(720deg);}
+}
+
+.coin img{
+     width: 100%;
+}
+.floor{
+     background-image: url('https://www.flooringstores.com/blog/wp-content/uploads/2020/03/Wood-Floor-Designs%E2%80%94Herringbone-Parquet-Dark-1024x669.jpg');
+     background-repeat: no-repeat;
+     background-size: 100% 100%;
+     background-color: wheat;
+     width: 200%;
+     height: 100%;
+     /* border: 2px solid black; */
+     position: absolute;
+     transform-origin: bottom;
+     transform: rotateX(58deg);
+
+}
+.wall{
+     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ78bT1r6a8S34WT9891QPqlQsuDiRRYsITQ&usqp=CAU');
+     background-repeat: no-repeat;
+     background-size: 100% 100%;
+     perspective: 800px;
+     background-color: skyblue;
+     transform:translateY(-308px) ;
+     width: 100%;
+     height: 100%;
+     /* border: 2px solid blue; */
+     position: absolute;
+
+}
+     </style>
+</head>
+<body>
+     <div class="main">
+          <div class="floor"></div>
+          <div class="wall"></div>
+          <div class="coin">
+               <img src="./image/download-cutout.png" alt="">
+          </div>
+     </div>
+</body>
+</html>

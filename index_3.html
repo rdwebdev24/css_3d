@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+
+*{
+     margin: 0px;
+     padding: 0px;
+     box-sizing: border-box;
+}
+body{
+     width: 100vw;
+     height: 100vh;
+     display: grid;
+     place-items: center;
+}
+
+.main{
+     /* border: 2px solid red; */
+     width: 600px;
+     height: 400px;
+     transform-style: preserve-3d;
+     position: relative;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     animation: roll 5s linear infinite forwards;
+
+}
+.face{
+     display: grid;
+     place-items: center;
+     color: white;
+     font-weight: bold;
+     font-size: 30px;
+     position: absolute;
+     width: 100px;
+     height: 100px;
+
+}
+@keyframes roll {
+     0%{transform: rotate3d(0,0,0,0deg);}
+     100%{transform: rotate3d(1,1,1,360deg);}
+}
+.face.face1{
+     
+     background-color:red;
+     transform: translateZ(100px);
+}
+
+.face.face2{
+      
+     background-color:orange;
+     transform-origin: left;
+     transform: rotateY(-90deg);
+}
+.face.face3{
+      
+     background-color:purple;
+     transform-origin: right;
+     transform: rotateY(90deg);
+}
+.face.face4{
+     
+     background-color:blue;
+     transform: rotateX(90deg) translate3d(0px,50px,50px);
+}
+.face.face5{
+     
+     background-color:green;
+     transform: rotateX(-90deg) translate3d(0px,-50px,50px) ;
+
+}
+.face.face6{
+      
+     background-color:yellow;
+     transform-origin: center;
+     transform: rotateY(180deg);
+}
+
+     </style>
+</head>
+<body>
+     <div class="main">
+          <div class="face face1">1</div>
+          <div class="face face2">2</div>
+          <div class="face face3">3</div>
+          <div class="face face4">4</div>
+          <div class="face face5">5</div>
+          <div class="face face6">6</div>
+     </div>
+</body>
+</html>

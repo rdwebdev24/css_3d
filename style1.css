@@ -1,0 +1,86 @@
+*{
+     margin: 0px;
+     padding: 0px;
+     box-sizing: border-box;
+}
+
+section{
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100vh;
+     overflow:hidden;
+}
+
+.pattern {
+     position: relative;
+     transform-style: preserve-3d ;
+     perspective: 700px;
+     /* animation: animateBg 10s  ease-in-out infinite; */
+}
+
+@keyframes animateBg {
+     0%,100%{
+          transform: scale(1.7) rotate(-15deg);
+     }
+     50%{
+          transform: scale(1.7) rotate(15deg);
+     }
+     
+}
+
+.pattern .face {
+     position: relative;  
+     width: 100%;
+     height: 50vh;
+     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6NV4XerO73N9X_X99GPsD7jKPp3cA1yJY1Q&usqp=CAU');
+     background-size: 100% 100%;
+     transform: translateZ(155px) translateY(31px);
+     top: 60px;
+     animation: animate 0.3s linear infinite;
+}
+
+
+@keyframes animate {
+0%{
+     background-position: 0;
+}
+100%{
+     background-position: -100px;
+}
+}
+
+.pattern .face.face2 {
+     height: 100vh;
+     transform-origin: top;
+     transform: rotateX(70deg) ;
+}
+.image{
+     position: absolute;
+     width: 140px;
+     bottom: -30px;
+     left: 200px;
+
+}
+/* .pattern .face1:before {
+    content: "";
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 125px;
+    background-image:linear-gradient(0deg , rgba(0,0,0,0) , transparent) ;
+
+}
+.pattern .face1:after {
+    content: "";
+    position: absolute;
+    bottom:top;
+    left: 0;
+    width: 100%;
+    height: 125px;
+    background-image:linear-gradient(180deg , rgba(0,0,0,0) , transparent) ;
+
+} */
+
